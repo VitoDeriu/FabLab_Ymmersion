@@ -1,0 +1,17 @@
+.status-container {
+  text-align: center;
+}
+.status-bar {
+  display: flex;
+  justify-content: space-between;
+}
+.step {
+  padding: 10px;
+  border: 1px solid black;
+  width: 100px;
+  text-align: center;
+}
+.completed {
+  background-color: green;
+  color: white;
+}
