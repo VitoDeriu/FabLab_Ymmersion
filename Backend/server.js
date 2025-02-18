@@ -1,5 +1,5 @@
 //importation des modules
-const app = require('./api/app');
+const app = require('./src/app');
 require('dotenv').config();
 
 //set des variables du serveur
