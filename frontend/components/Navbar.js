@@ -14,7 +14,7 @@ const Navbar = () => {
     { href: '/', label: 'Accueil' },
     { href: '/machines', label: 'Machines' },
     { href: '/reservations', label: 'Réservations' },
-    { href: isAuthenticated ? '/Profile' : '/ Profil', label: isAuthenticated ? '/pages/Login' : 'S\'inscrire' }, // Changement ici
+    { href: isAuthenticated ? '/profile' : '/login', label: isAuthenticated ? 'Profil' : 'S\'inscrire' },
   ];
 
   return (
