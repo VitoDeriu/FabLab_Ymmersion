@@ -20,12 +20,8 @@ class Auth{
     
             //execution de la requete
             database.query(sql, value, (err, result) =>{
-                if(err){
-                    console.log("variable d'entrée user : ", user)
-                    console.log(sql, value)
-                    return reject(err);
-                }
-                resolve(result.insertId);
+                if(err) reject(err)
+                else resolve(result.insertId)
             });
         });
     }
