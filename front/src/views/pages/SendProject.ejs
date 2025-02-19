@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Envoyer un projet</title>
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/public/styles.css">
+</head>
+<body>
+  <%- include ('../components/navbar.ejs')%>
+    <div class="container">
+        <h2>Envoyer un projet</h2>
+        <form action="/submit" method="POST">
+            <input type="text" name="nom" placeholder="Nom du projet" required>
+            <input type="text" name="imprimante" placeholder="Type d'imprimante" required>
+            <input type="text" name="filament" placeholder="Filament" required>
+            <input type="text" name="fichier" placeholder="Fichier">
+            <textarea name="commentaire" placeholder="Commentaire"></textarea>
+            <button type="submit">Envoyer</button>
+        </form>
+    </div>
+</body>
+</html>
