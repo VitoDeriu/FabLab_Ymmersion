@@ -18,10 +18,8 @@ class User {
                         FROM users
                         WHERE id = ?;`
             database.query(sql, id, (err, results) => {
-                if (err){
-                    return reject(err)
-                } 
-                return resolve(results)
+                if (err) reject(err)
+                else resolve(results)
             })
         })
 
