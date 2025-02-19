@@ -6,12 +6,15 @@ import { usePathname } from 'next/navigation';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
+  
+  // Simuler l'état de connexion de l'utilisateur (vous pouvez remplacer cela par votre logique d'authentification)
+  const [isAuthenticated, setIsAuthenticated] = useState(false); // Remplacez par la logique réelle
 
   const navLinks = [
     { href: '/', label: 'Accueil' },
     { href: '/machines', label: 'Machines' },
     { href: '/reservations', label: 'Réservations' },
-    { href: '/profile', label: 'Profil' },
+    { href: isAuthenticated ? '/Profile' : '/ Profil', label: isAuthenticated ? '/pages/Login' : 'S\'inscrire' }, // Changement ici
   ];
 
   return (
