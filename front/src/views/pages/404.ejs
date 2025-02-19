@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FabLab - Page non trouvée</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+    <%- include('../components/header.ejs') %>
+    
+    <div class="flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <h1 class="text-6xl font-bold text-indigo-600">404</h1>
+            <h2 class="text-3xl font-semibold text-gray-900 mt-4">Page non trouvée</h2>
+            <p class="mt-4 text-gray-600">Désolé, la page que vous recherchez n'existe pas.</p>
+            <a href="/" class="mt-6 inline-block bg-indigo-600 text-white px-6 py-3 rounded-md hover:bg-indigo-700">
+                Retour à l'accueil
+            </a>
+        </div>
+    </div>
+
+    <%- include('../components/footer.ejs') %>
+</body>
+</html>

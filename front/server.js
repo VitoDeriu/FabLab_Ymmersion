@@ -3,8 +3,10 @@ const app = require('./src/app');
 require('dotenv').config();
 
 //set des variables du serveur
-const port = process.env.PORT;
-const host = process.env.HOST;
+const port = process.env.PORT || 3001;
+const host = process.env.HOST || 'localhost';
 
 //lancement du serv api
-app.listen(port, host, () => console.log(`Server listening on port ${process.env.BASE_URL}`));
+app.listen(port, host, () => {
+    console.log(`Server listening on http://${host}:${port}`);
+});
