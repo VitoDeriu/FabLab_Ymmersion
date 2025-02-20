@@ -21,9 +21,9 @@ class UserController{
         }
     }
 
-    static async DeleteUser(req, res) {
+    
 
-    }
+    // static async DeleteUser(req, res) {}
 
 }
 

@@ -1,4 +1,4 @@
-const User = require('../models/user');
+const Auth = require('../models/auth');
 const bcrypt = require('bcrypt');
 const validator = require('validator');
 
@@ -24,7 +24,7 @@ class AuthController{
         user.password = passwordHashed;
         //appel du model pour créer l'user
         try{
-            const userId = await User.createUser(user)
+            const userId = await Auth.createUser(user)
             res.status(200).json({message : 'Utilisateur créer avec succès', userId})
         }catch{
             console.log(user)
@@ -32,9 +32,7 @@ class AuthController{
         }
     }
 
-
-
-
+    // faire le login
 }   
 
 module.exports = AuthController;

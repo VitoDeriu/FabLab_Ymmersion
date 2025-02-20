@@ -49,10 +49,10 @@ CREATE TABLE IF NOT EXISTS project(
     description TEXT,
     feedback TEXT,
 
-    email VARCHAR(100) NOT NULL,
+    id_user VARCHAR(100) NOT NULL,
     id_printer INT NOT NULL,
     id_status VARCHAR(30) NOT NULL,
-    FOREIGN KEY (email) REFERENCES users(email),
+    FOREIGN KEY (id_user) REFERENCES users(id),
     FOREIGN KEY (id_printer) REFERENCES printer(id),
     FOREIGN KEY (id_status) REFERENCES project_status(id)
 );
