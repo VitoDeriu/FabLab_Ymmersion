@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FabLab - Projets</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f3f4f6;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .download-btn {
+            background-color: #2563eb;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .download-btn:hover {
+            background-color: #1d4ed8;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <%- include('../components/header.ejs') %>
+
+    <h1 class="text-2xl font-bold text-center mt-6">Projets des Créateurs</h1>
+
+    <div class="container mx-auto mt-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
+            <% projects.forEach(project => { %>
+                <div class="card">
+                    <h2 class="text-xl font-semibold"><%= project.title %></h2>
+                    <p class="text-gray-600"><%= project.description %></p>
+                    <p class="text-sm text-gray-500">Créé par : <%= project.creator %></p>
+                    
+                    <!-- Bouton de téléchargement -->
+                    <a href="/downloads/<%= project.file %>" class="download-btn" download>
+                        Télécharger le fichier STL
+                    </a>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+
+    <%- include('../components/footer.ejs') %>
+
+</body>
+</html>

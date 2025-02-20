@@ -5,6 +5,11 @@ const session = require('express-session');
 
 const app = express();
 
+app.get('/project', (req, res) => {
+    res.render('project', { title: 'Mon Projet', description: 'Description du projet' });
+});
+
+
 // Configuration des middlewares
 app.use(cors());
 app.use(express.json());
