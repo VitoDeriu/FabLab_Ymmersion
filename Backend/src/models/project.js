@@ -47,6 +47,18 @@ class Project {
         })
     }
 
+    static getProjectByName(name) {
+        return new Promise((resolve, reject) => {
+            const sql = `SELECT * 
+                        FROM project 
+                        WHERE name = ?;`
+            database.query(sql, name, (err, results) => {
+                if (err) reject(err)
+                else resolve(results)
+            })
+        })
+    }
+
     //faire update project
     //faire update feedback
     //faire update status

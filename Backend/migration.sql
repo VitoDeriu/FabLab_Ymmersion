@@ -19,6 +19,11 @@ CREATE TABLE IF NOT EXISTS printer_status(
     name VARCHAR(30) NOT NULL
 );
 
+CREATE TABLE IF NOT EXISTS printer_type(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(30) NOT NULL
+);
+
 CREATE TABLE IF NOT EXISTS project_status(
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(30) NOT NULL
@@ -60,8 +65,12 @@ CREATE TABLE IF NOT EXISTS project(
 CREATE TABLE IF NOT EXISTS printer(
     id INT PRIMARY KEY AUTO_INCREMENT, 
     name VARCHAR(50) NOT NULL,
-    type VARCHAR(50) NOT NULL,
+    surface_L INT NOT NULL,
+    surface_P INT NOT NULL,
+    surface_H INT NOT NULL,
 
+    id_type INT NOT NULL,
     id_status INT NOT NULL,
+    FOREIGN KEY (id_type) REFERENCES printer_type(id),
     FOREIGN KEY (id_status) REFERENCES printer_status(id)
 );
