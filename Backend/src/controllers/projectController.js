@@ -27,7 +27,8 @@ class ProjectController{
         }
     }
 
-    static async GetProjectById(req, res) {
+    // on passe l'id par requete dans l'url 
+    static async GetProjectById(req, res){
         const id = parseInt(req.param.id, 10)
         try{
             const project = await Project.getProjectById(id)
@@ -37,6 +38,13 @@ class ProjectController{
         }
     }
     
+    /* Type de json attendu pour la route :
+        
+        {
+            "name" : "Nom du projet"
+        }
+       
+    */
     static async GetProjectByName(req, res) {
         const name = req.body
         try{

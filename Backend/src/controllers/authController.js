@@ -6,6 +6,21 @@ const validator = require('validator');
 
 class AuthController{
 
+
+    
+    /*  Type de json attendu pour la route register :
+
+        {
+        "firstname" : "Vito",
+        "lastname" : "Deriu",
+        "pseudo" : "Weep",
+        "email" : "vito@fablab.com",
+        "password" : "password",
+        "is_admin" : true,
+        "id_class" : 1
+        }
+    
+    */
     static async Register(req, res) {
         try{
             const user = req.body;
@@ -47,6 +62,14 @@ class AuthController{
         }
     }
 
+    /* Type de json attendu pour la route login :
+
+        {
+        "email" : "Vito",
+        "password" : "password"
+        }
+    
+    */
     static async Login(req, res) {
         try {
             const {email, password} = req.body
