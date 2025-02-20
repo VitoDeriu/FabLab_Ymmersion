@@ -18,42 +18,46 @@
                 <div class="text-center">
                     <h1 class="text-4xl sm:text-5xl font-bold mb-4">Bienvenue au FabLab Ymmersion</h1>
                     <p class="text-xl sm:text-2xl mb-8">Découvrez un espace d'innovation et de création collaborative</p>
-                    <a href="/projects" class="inline-block bg-white text-indigo-600 font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition duration-300">
-                        Découvrir les Projets
-                    </a>
+                    <div class="flex justify-center space-x-4">
+                        <a href="/machines" class="inline-block bg-white text-indigo-600 font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition duration-300">
+                            <i class="fas fa-robot mr-2"></i>
+                            Machines
+                        </a>
+                        <a href="/reservation" class="inline-block bg-white text-indigo-600 font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition duration-300">
+                            <i class="fas fa-calendar-alt mr-2"></i>
+                            Réservation
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- Features Grid -->
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Innovation Card -->
-                <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300">
-                    <div class="text-indigo-600 text-3xl mb-4">
-                        <i class="fas fa-lightbulb"></i>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Machines Card -->
+                <a href="/machines" class="bg-white rounded-lg shadow-md p-8 hover:shadow-lg transition duration-300 text-center group cursor-pointer">
+                    <div class="text-indigo-600 text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-robot"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">Innovation</h3>
-                    <p class="text-gray-600">Explorez vos idées et donnez vie à vos projets créatifs dans notre espace équipé.</p>
-                </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Machines</h3>
+                    <p class="text-gray-600 mb-4">Découvrez notre parc de machines et leurs spécifications techniques</p>
+                    <span class="inline-block text-indigo-600 font-semibold group-hover:translate-x-2 transition-transform duration-300">
+                        Voir les machines <i class="fas fa-arrow-right ml-2"></i>
+                    </span>
+                </a>
 
-                <!-- Collaboration Card -->
-                <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300">
-                    <div class="text-indigo-600 text-3xl mb-4">
-                        <i class="fas fa-users"></i>
+                <!-- Réservation Card -->
+                <a href="/reservation" class="bg-white rounded-lg shadow-md p-8 hover:shadow-lg transition duration-300 text-center group cursor-pointer">
+                    <div class="text-indigo-600 text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-calendar-alt"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">Collaboration</h3>
-                    <p class="text-gray-600">Rejoignez une communauté dynamique de créateurs et partagez vos connaissances.</p>
-                </div>
-
-                <!-- Resources Card -->
-                <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300">
-                    <div class="text-indigo-600 text-3xl mb-4">
-                        <i class="fas fa-tools"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">Ressources</h3>
-                    <p class="text-gray-600">Accédez à des outils et équipements de pointe pour réaliser vos projets.</p>
-                </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Réservation</h3>
+                    <p class="text-gray-600 mb-4">Planifiez votre session et réservez le matériel nécessaire</p>
+                    <span class="inline-block text-indigo-600 font-semibold group-hover:translate-x-2 transition-transform duration-300">
+                        Faire une réservation <i class="fas fa-arrow-right ml-2"></i>
+                    </span>
+                </a>
             </div>
         </div>
     </main>
