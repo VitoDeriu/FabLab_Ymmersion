@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-const API_URL = process.env.BACKEND_URL || 'http://localhost:3000/api';
+const API_URL = process.env.BACKEND_URL || 'http://localhost:4000/';
 
 const authController = {
     // Afficher la page de connexion

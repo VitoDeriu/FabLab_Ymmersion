@@ -29,5 +29,6 @@ VALUES  ('Bambulab P1P', 256, 256, 256, 2, 1),
         ('Elegoo Saturn 3', 218, 122, 250, 1, 1),
         ('Elegoo Jupiter SE', 277, 156, 300, 1, 1);
 
-INSERT INTO users(firstname, lastname, pseudo, email, password, is_admin, id_class)
-VALUES  ('Kantin', 'Fagniart', 'KAVTIV', 'kantin@fablab.com', 'password', false, 3);
+INSERT INTO users(firstname, lastname, pseudo, email, password, is_admin, created_at, id_class)
+VALUES  ('Kantin', 'Fagniart', 'KAVTIV', 'kantin@fablab.com', '$2b$10$DX.gcYHlxsI8zr8s7FktQejZF1xlkLRvoxnrherLmLZMMLyIOAE5e', false, NOW(), 3),
+        ('Vito', 'Deriu', 'Weep', 'vito@fablab.com', '$2b$10$rxqWEjOluzqTU1gZIPXiVuw6vsrtCp0PrkH68EgRrtZ.vMNGNnKQO', true, NOW(), 1);
