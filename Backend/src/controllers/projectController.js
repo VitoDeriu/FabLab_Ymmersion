@@ -3,19 +3,11 @@ const Project = require('../models/project');
 class ProjectController{
     
     static async CreateProject(req, res){
-        const project = req.body;
-        if(!project){
-            res.status(401).send({
-                message : 'Informations Invalides',
-                status : 401
-            })}
-        try{
-            const projectId = await Project.createProject(project)
-            res.status(200).json({message : 'Project créer avec succès, id : ', projectId})
-        } catch {
-            console.log(user)
-            res.status(500).json({error : error.message})
-        }
+        
+        const project = req.body
+        
+
+
     }
 
     static async GetAllProject(req, res){
