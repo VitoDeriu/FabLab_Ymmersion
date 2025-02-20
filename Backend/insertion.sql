@@ -1,15 +1,33 @@
 INSERT INTO classes (name) 
-VALUES('supervisor'), ('archi'), ('info'), ('market'), ('3D jeux video'), ('audio visuel');
+VALUES  ('supervisor'), 
+        ('archi'), 
+        ('info'), 
+        ('market'), 
+        ('3DJV'), 
+        ('audio visuel');
 
 INSERT INTO  printer_status (name)
-VALUES ("Libre"), ("En cours d'impression"), ("Impression terminée");
+VALUES  ("Libre"), 
+        ("En cours d'impression"), 
+        ("Impression terminée");
+
+INSERT INTO printer_type (name)
+VALUES  ("Resine"), 
+        ("Filament");
 
 INSERT INTO project_status (name)
-VALUES ("en attente de validation"), ("validé"), ("en attente d'impression"), ("en impression"), ("impression terminé"), ("impression réussie"), ("impression échouée");
+VALUES  ("en attente de validation"), 
+        ("validé"), 
+        ("en attente d'impression"), 
+        ("en impression"), 
+        ("impression terminé"), 
+        ("impression réussie"), 
+        ("impression échouée");
 
-INSERT INTO printer(name, type, id_status)
-VALUES ('Elegoo Saturn', 'resine', 1), ('Elegoo Neptune', 'filaire', 1);
+INSERT INTO printer(name, surface_L, surface_P, surface_H, id_type, id_status)
+VALUES  ('Bambulab P1P', 256, 256, 256, 2, 1),
+        ('Elegoo Saturn 3', 218, 122, 250, 1, 1),
+        ('Elegoo Jupiter SE', 277, 156, 300, 1, 1);
 
 INSERT INTO users(firstname, lastname, pseudo, email, password, is_admin, id_class)
-VALUES ('Kantin', 'Fagniart', 'KAVTIN', 'kantin@fablab.com', 'password', false, 3)
-
+VALUES  ('Kantin', 'Fagniart', 'KAVTIV', 'kantin@fablab.com', 'password', false, 3);

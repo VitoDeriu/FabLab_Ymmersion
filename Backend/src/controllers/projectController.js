@@ -36,6 +36,16 @@ class ProjectController{
             res.status(500).json({error : error.message})
         }
     }
+    
+    static async GetProjectByName(req, res) {
+        const name = req.body
+        try{
+            const project = await Project.getProjectByName(name)
+            res.status(200).json(project)
+        } catch {
+            res.status(500).json({error : error.message})
+        }
+    }
 
     //faire update project
     //faire update feedback
