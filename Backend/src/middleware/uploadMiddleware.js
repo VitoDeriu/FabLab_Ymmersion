@@ -8,7 +8,8 @@ const storage = multer.diskStorage({
     filename: (req, file, cb) => {
         //génère un nom unique : timestamp + extension
         const uniqueSuffix = Date.now() + path.extname(file.originalname);
-        cb(null, file.fieldname + "-" + uniqueSuffix);
+        const originame = path.parse(file.originalname).name
+        cb(null, originame + "-" + file.fieldname + "-" + uniqueSuffix);
     },
 });
 
@@ -24,15 +25,11 @@ const fileFilter = (req, file, cb) => {
     }
 };
 
-
-
 //defini la taille max du fichier dans limits
 const upload = multer({
     storage: storage,
     fileFilter: fileFilter, 
-    limits: { fileSize: 5 * 1024 *1024} //5MB
+    limits: { fileSize: 100 * 1024 *1024} //5MB
 })
-
-
 
 module.exports = upload

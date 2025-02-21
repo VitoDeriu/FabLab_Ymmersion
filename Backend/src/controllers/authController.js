@@ -5,8 +5,6 @@ const validator = require('validator');
 
 
 class AuthController{
-
-
     
     /*  Type de json attendu pour la route register :
 
@@ -20,12 +18,10 @@ class AuthController{
         "id_class" : 1
         }
     
-    */
+    */    
     static async Register(req, res) {
         try{
             const user = req.body;
-
-            console.log('user au debut du try :',user)
 
             //verifier si les infos sont bien saisies
             if (!user.firstname || !user.lastname || !user.pseudo || !user.email || !user.password || !user.id_class ){
@@ -36,24 +32,20 @@ class AuthController{
 
             // Vérifier si l'email ou le pseudo existent déjà
             const existingUser = await User.getUserByEmail(user.email);
-            console.log('existing user :', existingUser)
             if (existingUser != null) {
                 return res.status(409).json({ message: "Cet email est déjà utilisé" });
             }
             
             //vérifier si le pseudo existe déjà
             const existingPseudo = await User.getUserByPseudo(user.pseudo);
-            console.log('existing pseudo :', existingPseudo)
             if (existingPseudo != null) {
                 return res.status(409).json({ message: "Ce pseudo est déjà utilisé" });
             }
 
             //hasher le mdp 
             user.password = await bcrypt.hash(user.password, 10);
-            console.log('user.password :', user.password)
 
             //appel du model pour créer l'user
-            console.log("user avant l'appel du register model :", user)
             const userId = await Auth.register(user)
             res.status(200).json({message : 'Utilisateur créer avec succès', userId})
                 

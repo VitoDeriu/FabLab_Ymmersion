@@ -43,8 +43,6 @@ class UserController{
         }
     }
 
-    
-
     // static async DeleteUser(req, res) {}
 
 }

@@ -4,18 +4,16 @@ class Project {
 
     static createProject(project){
         return new Promise((resolve, reject)=> {
-            const sql = `INSERT INTO project (name, file, created_at, print_date, print_duration, description, id_user, id_printer, id_status)
-                        VALUES (?, ?, NOW(), ?, ?, ?, ?, ?, ?);`
+            const sql = `INSERT INTO project (name, file, created_at, print_duration, description, id_user, id_printer, id_status)
+                        VALUES (?, ?, NOW(), ?, ?, ?, ?, 1);`
 
             const value = [
                 project.name, 
-                project.file,
-                project.print_date, //faut recup un timestamp a voir comment faire 
-                project.print_duration, //l'avoir en seconde
-                project.descripton,
+                project.file,               //stocker le chemin du fichier dans la db
+                project.print_duration,     //l'avoir en seconde
+                project.description,
                 project.id_user,
-                project.id_printer, 
-                project.id_status
+                project.id_printer
             ];
 
             database.query(sql, value, (err, results) =>{
@@ -40,10 +38,7 @@ class Project {
             const sql = `SELECT * 
                         FROM project 
                         WHERE id = ?;`
-            database.query(sql, id, (err, results) => {
-                if (err) reject(err)
-                else resolve(results)
-            })
+            database.query(sql, id, (err, results) => err ? reject(err) : resolve(results[0]))
         })
     }
 
