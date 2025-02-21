@@ -7,6 +7,10 @@ class MachinesController {
             res.status(500).send('Erreur serveur');
         }
     }
+
+    //fonction qui renvoi les 3 machines de la base donnée (j'ai pas fais le back)
+
+    //
 }
 
 module.exports = MachinesController;

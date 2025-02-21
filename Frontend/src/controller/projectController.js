@@ -1,4 +1,6 @@
 class ProjectController {
+  //page projet pour 1 seul projet, on peut la récup avec l'index du projet
+
   static async GetProject(req, res) {
     try {
       const response = await fetch('http://localhost:4000/project'); // Appel API
@@ -10,6 +12,8 @@ class ProjectController {
       res.status(500).send('Erreur serveur');
     }
   }
+
+  //create project qui envoi un json avec le fichier dans localhost:4000/project/create
 }
 
 module.exports = ProjectController;
